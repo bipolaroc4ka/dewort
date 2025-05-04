@@ -2,8 +2,6 @@ export const WORDS = [
 "abart",
 "abbau",
 "abbey",
-"abdul",
-"abeba",
 "abels",
 "abend",
 "abgas",
