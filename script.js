@@ -245,11 +245,12 @@ function handleVirtualKey(key) {
     }
 
     if (key === 'ß') {
-        insertLetter('ß');
+        
         // Находим элемент, к которому нужно применить класс
         let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining];
         let box = row.children[nextLetter];
         box.classList.add('letter-ß');
+        insertLetter('ß');
     } else if (key.length === 1 && key.match(/[a-zA-ZÄÖÜäöü]/)) {
         insertLetter(key.toLowerCase());
     }
