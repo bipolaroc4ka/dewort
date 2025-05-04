@@ -245,13 +245,16 @@ function handleVirtualKey(key) {
     }
 
     if (key === 'ß') {
-         insertLetter('ß');    
-         box.classList.add('letter-ß');
-        } else if (key.length === 1 && key.match(/[a-zA-ZÄÖÜäöü]/)) {
-            insertLetter(key.toLowerCase());
-        }
-
+        insertLetter('ß');
+        // Находим элемент, к которому нужно применить класс
+        let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining];
+        let box = row.children[nextLetter];
+        box.classList.add('letter-ß');
+    } else if (key.length === 1 && key.match(/[a-zA-ZÄÖÜäöü]/)) {
+        insertLetter(key.toLowerCase());
+    }
 }
+
 
 // В самом конце (после initBoard())
 document.addEventListener("DOMContentLoaded", function() {
