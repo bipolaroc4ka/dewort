@@ -210,9 +210,9 @@ document.addEventListener("keydown", (e) => {
 })
 function initKeyboard() {
     const keys = [
-        ['Q','W','E','R','T','Y','U','I','O','P'],
-        ['A','S','D','F','G','H','J','K','L'],
-        ['Enter','Z','X','C','V','B','N','M','Backspace']
+        ['Q','W','E','R','T','Z','U','I','O','P','Ü'],
+        ['A','S','D','F','G','H','J','K','L','Ö','Ä'],
+        ['Enter','Y','X','C','V','B','N','M','Backspace']
     ];
 
     const keyboard = document.getElementById("keyboard");
@@ -244,7 +244,7 @@ function handleVirtualKey(key) {
         return;
     }
 
-    if (key.length === 1 && key.match(/[a-zA-Z]/)) {
+    if (key.length === 1 && key.match(/[a-zA-ZÄÖÜäöü]/)) {
         insertLetter(key.toLowerCase());
     }
 }
@@ -252,5 +252,6 @@ function handleVirtualKey(key) {
 // В самом конце (после initBoard())
 document.addEventListener("DOMContentLoaded", function() {
     initBoard();
-    initKeyboard();  // добавляем сюда вызов
+    initKeyboard();
 });
+
