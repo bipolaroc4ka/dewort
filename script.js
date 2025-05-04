@@ -54,10 +54,16 @@ const word = rightGuessString; // Загаданное слово
 document.getElementById('word').textContent = word; // Отображаем слово в span
 
 document.getElementById('reveal-word-btn').addEventListener('click', function() {
-    document.getElementById('word-display').style.display = 'block'; // Показываем слово
+    document.getElementById('word-display').style.display = 'block'; 
+    reloadPageAfterDelay();// Показываем слово
 });
 
 
+function reloadPageAfterDelay(seconds = 7) {
+    setTimeout(() => {
+        location.reload();
+    }, seconds * 1000);
+}
 
 // создаём игровое поле
 function initBoard() {
@@ -121,14 +127,14 @@ function checkGuess () {
     // если в догадке меньше 5 букв — выводим уведомление, что букв не хватает
     if (guessString.length != 5) {
         // error означает, что уведомление будет в формате ошибки
-        toastr.error("Введены не все буквы!");
+        toastr.error("Nicht alle Buchstaben wurden eingegeben!");
         // и после вывода выходим из проверки догадки
         return;
     }
 
     // если введённого слова нет в списке возможных слов — выводим уведомление
     if (!WORDS.includes(guessString)) {
-        toastr.error("Такого слова нет в списке!")
+        toastr.error("Dieses Wort steht nicht auf der Liste!")
         // и после вывода выходим из проверки догадки
         return;
     }
@@ -171,6 +177,7 @@ function checkGuess () {
     if (guessString === rightGuessString) {
         // выводим сообщение об успехе
         toastr.success("Вы выиграли!")
+        reloadPageAfterDelay();
         // обнуляем количество попыток
         guessesRemaining = 0;
         // выходим из проверки
@@ -187,9 +194,10 @@ function checkGuess () {
         // если попытки закончились
         if (guessesRemaining === 0) {
             // выводим сообщение о проигрыше
-            toastr.error("У вас не осталось попыток. Вы проиграли!");
+            toastr.error("Sie haben keine Versuche mehr. Sie haben verloren!");
             // и выводим загаданное слово
-            toastr.info(`Загаданное слово: "${rightGuessString}"`)
+            toastr.info(`Das gesuchte Wort: "${rightGuessString}"`)
+            reloadPageAfterDelay();
         }
     }
 }
