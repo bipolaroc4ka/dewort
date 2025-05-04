@@ -245,7 +245,7 @@ function handleVirtualKey(key) {
     }
 
     if (key === 'ß') {
-        insertLetter('ß');
+        insertLetter(key.toUpperCase());
         } else if (key.length === 1 && key.match(/[a-zA-ZÄÖÜäöü]/)) {
             insertLetter(key.toLowerCase());
         }
