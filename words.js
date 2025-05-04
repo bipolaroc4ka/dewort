@@ -975,7 +975,8 @@ export const WORDS = [
 "zwang",
 "zweck",
 "zweig",
-"zwirn"
+"zwirn",
+"zwerg"
 
 
 
