@@ -75,14 +75,20 @@ h1 {
 
 @media (max-width: 768px) {
   .keyboard-key {
-    font-size: 14px;
-    padding: 8px 12px;
+    font-size: 12px;
+    padding: 6px 8px;
+    margin: 2px; /* немного пространства между кнопками */
+    flex: 0 1 auto; /* чтобы кнопки не растягивались сильно */
   }
+
   .keyboard-row {
+    display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: center; /* вместо space-evenly — центрируем плотнее */
+    gap: 4px; /* аккуратный отступ между кнопками */
   }
 }
+
 
 
 
