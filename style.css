@@ -1,4 +1,9 @@
 /* заголовок страницы */
+html, body {
+    touch-action: manipulation; 
+    -ms-touch-action: manipulation;
+}
+
 h1 {
     text-align: center;
    }
@@ -43,3 +48,37 @@ h1 {
    .filled-box {
      border: 3px solid black;
    }
+#keyboard {
+  margin-top: 20px;
+}
+
+.keyboard-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.keyboard-key {
+  margin: 2px;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #d3d6da;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .keyboard-key {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+  .keyboard-row {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+}
+
+
+
+
