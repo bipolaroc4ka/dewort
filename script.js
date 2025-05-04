@@ -208,6 +208,49 @@ document.addEventListener("keydown", (e) => {
         insertLetter(pressedKey)
     }
 })
+function initKeyboard() {
+    const keys = [
+        ['Q','W','E','R','T','Y','U','I','O','P'],
+        ['A','S','D','F','G','H','J','K','L'],
+        ['Enter','Z','X','C','V','B','N','M','Backspace']
+    ];
 
+    const keyboard = document.getElementById("keyboard");
+    keys.forEach(row => {
+        const rowDiv = document.createElement('div');
+        rowDiv.classList.add('keyboard-row');
+        row.forEach(key => {
+            const button = document.createElement('button');
+            button.textContent = key;
+            button.classList.add('keyboard-key');
+            button.setAttribute('data-key', key);
+            button.addEventListener('click', () => handleVirtualKey(key));
+            rowDiv.appendChild(button);
+        });
+        keyboard.appendChild(rowDiv);
+    });
+}
 
-initBoard();
+function handleVirtualKey(key) {
+    if (guessesRemaining === 0) return;
+
+    if (key === 'Backspace') {
+        if (nextLetter !== 0) deleteLetter();
+        return;
+    }
+
+    if (key === 'Enter') {
+        checkGuess();
+        return;
+    }
+
+    if (key.length === 1 && key.match(/[a-zA-Z]/)) {
+        insertLetter(key.toLowerCase());
+    }
+}
+
+// В самом конце (после initBoard())
+document.addEventListener("DOMContentLoaded", function() {
+    initBoard();
+    initKeyboard();  // добавляем сюда вызов
+});
