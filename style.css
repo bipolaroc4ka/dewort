@@ -45,6 +45,9 @@ h1 {
      /* делаем все буквы большими */
      text-transform: uppercase;
    }
+    .letter-box.letter-ß {
+    text-transform: none; /* Для ß не применяем верхний регистр */
+}
    
    /* добавляем жирную обводку у заполненных клеток */
    .filled-box {
