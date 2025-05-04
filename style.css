@@ -1,4 +1,6 @@
 /* заголовок страницы */
+font-variant-caps: normal;
+
 html, body {
     touch-action: manipulation; 
     -ms-touch-action: manipulation;
