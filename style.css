@@ -1,5 +1,27 @@
 /* заголовок страницы */
 
+#reveal-word-btn {
+    background-color: #4CAF50; /* Зеленый цвет */
+    color: white;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Адаптивность на мобильных устройствах */
+    max-width: 250px; /* Максимальная ширина для десктопов */
+    margin: 10px auto;
+}
+
+#reveal-word-btn:hover {
+    background-color: #45a049; /* Более темный зеленый при наведении */
+}
+
+#word-display {
+    font-size: 18px;
+    margin-top: 10px;
+}
 
 html, body {
     touch-action: manipulation; 
