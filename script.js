@@ -14,6 +14,45 @@ let rightGuessString = WORDS[Math.floor(Math.random() * WORDS.length)]
 // на всякий случай выведем в консоль загаданное слово, чтобы проверить, как работает игра
 console.log(rightGuessString)
 
+// Функция для установки cookie
+function setCookie(name, value, days) {
+    let expires = "";
+    if (days) {
+        const date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+
+// Функция для получения cookie по имени
+function getCookie(name) {
+    let nameEQ = name + "=";
+    let ca = document.cookie.split(';');
+    for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+}
+
+// Функция для генерации уникального ID
+function generateUniqueID() {
+    const userID = getCookie('userID');
+    if (userID) return userID;
+    const newID = 'user_' + Math.random().toString(36).substring(2, 15);
+    setCookie('userID', newID, 365);  // Сохраняем ID на 1 год
+    return newID;
+}
+
+// Используем уникальный ID для статистики
+const userID = generateUniqueID();
+console.log('User ID:', userID);
+
+
+
+
 // создаём игровое поле
 function initBoard() {
     // получаем доступ к блоку на странице
@@ -208,6 +247,10 @@ document.addEventListener("keydown", (e) => {
         insertLetter(pressedKey)
     }
 })
+
+
+
+
 function initKeyboard() {
     const keys = [
         ['Q','W','E','R','T','Z','U','I','O','P','Ü'],
