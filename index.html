@@ -12,14 +12,34 @@
     <h1>Wordle </h1>
     
     <div id="game-board">
-
-    </div>
-
-<script
+     <div id="keyboard"></div>
+    <script
 src="https://code.jquery.com/jquery-3.6.0.min.js"
 integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    
 <script src="script.js" type="module"></script>
+
+
+<script>
+// Проверка: телефон или маленький экран
+function isMobileDevice() {
+    return /Mobi|Android|iPhone/i.test(navigator.userAgent);
+}
+
+function isSmallScreen() {
+    return window.innerWidth <= 768;
+}
+
+// Инициализация поля и клавиатуры
+document.addEventListener("DOMContentLoaded", function() {
+    initBoard();
+
+    if (isMobileDevice() || isSmallScreen()) {
+        initKeyboard();
+    }
+});
+</script>
 </body>
 </html>
