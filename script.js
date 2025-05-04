@@ -244,9 +244,12 @@ function handleVirtualKey(key) {
         return;
     }
 
-    if (key.length === 1 && key.match(/[a-zA-ZÄÖÜäöüß]/)) {
-        insertLetter(key.toLowerCase());
-    }
+    if (key === 'ß') {
+        insertLetter('ß');
+        } else if (key.length === 1 && key.match(/[a-zA-ZÄÖÜäöüß]/)) {
+            insertLetter(key.toLowerCase());
+        }
+
 }
 
 // В самом конце (после initBoard())
