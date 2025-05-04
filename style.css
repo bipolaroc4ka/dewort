@@ -2,9 +2,11 @@
 
 #reveal-word-btn {
     background-color: #4CAF50; /* Зеленый цвет */
+    display: flex;
+    justify-content: center;
     color: white;
-    font-size: 18px;
-    padding: 12px 24px;
+    font-size: 8px;
+    padding: 8px 16px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
