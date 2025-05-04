@@ -50,6 +50,12 @@ function generateUniqueID() {
 const userID = generateUniqueID();
 console.log('User ID:', userID);
 
+const word = rightGuessString; // Загаданное слово
+document.getElementById('word').textContent = word; // Отображаем слово в span
+
+document.getElementById('reveal-word-btn').addEventListener('click', function() {
+    document.getElementById('word-display').style.display = 'block'; // Показываем слово
+});
 
 
 
