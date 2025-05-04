@@ -1,7 +1,7 @@
 /* заголовок страницы */
 
 #reveal-word-btn {
-    background-color: #4CAF50; /* Зеленый цвет */
+    background-color: #e74c3c; /* Зеленый цвет */
     display: flex;
     justify-content: center;
     color: white;
@@ -17,7 +17,7 @@
 }
 
 #reveal-word-btn:hover {
-    background-color: #45a049; /* Более темный зеленый при наведении */
+    background-color: #c0392b; /* Более темный зеленый при наведении */
 }
 
 #word-display {
