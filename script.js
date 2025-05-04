@@ -176,7 +176,7 @@ function checkGuess () {
     // если мы угадали
     if (guessString === rightGuessString) {
         // выводим сообщение об успехе
-        toastr.success("Вы выиграли!")
+        toastr.success("Sie haben gewonnen!")
         reloadPageAfterDelay();
         // обнуляем количество попыток
         guessesRemaining = 0;
