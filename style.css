@@ -25,6 +25,15 @@
     margin-top: 10px;
 }
 
+.fixed-bottom {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+
 html, body {
     touch-action: manipulation; 
     -ms-touch-action: manipulation;
