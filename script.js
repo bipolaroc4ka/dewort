@@ -157,6 +157,7 @@ function deleteLetter () {
     box.textContent = ""
     // убираем жирную обводку
     box.classList.remove("filled-box")
+    box.classList.remove("letter-ß") // Можно добавлять другие классы, которые могут быть
     // удаляем последний символ из массива с нашей текущей догадкой
     currentGuess.pop()
     // помечаем, что у нас теперь на одну свободную клетку больше
