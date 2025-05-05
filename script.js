@@ -366,9 +366,9 @@ function handleVirtualKey(key) {
     if (key === '🏳️') {
         const modal = document.getElementById("confirmationModal");
 
-    // Показываем модальное окно
+    
         modal.classList.add('show'); // Когда окно появляется
-        modal.style.display = "flex";
+       
 
     // Получаем кнопки
         const confirmYesButton = document.getElementById("confirmYes");
@@ -388,7 +388,7 @@ function handleVirtualKey(key) {
     // Функция для обработки кнопки "Нет"
         function onNoClick() {
             modal.classList.remove('show');
-            modal.style.display = "none"; // Закрываем модальное окно
+            
         // Убираем обработчики после выполнения
             confirmYesButton.removeEventListener("click", onYesClick);
             confirmNoButton.removeEventListener("click", onNoClick);
