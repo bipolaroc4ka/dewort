@@ -27,7 +27,8 @@
 
 /* Заголовок модального окна */
 #confirmationModalContent h2 {
-    font-family: 'Georgia', 'Times New Roman', serif;
+    font-family: 'Lucida Console', Courier, monospace;
+    font-weight: bold;
     font-size: 1.7em;
     font-weight: bold;
     color: #1a1a1a;
@@ -38,7 +39,8 @@
 
 /* Текст в модальном окне */
 #confirmationModalContent p {
-    font-family: 'Open Sans', Arial, sans-serif;
+    font-family: 'Lucida Console', Courier, monospace;
+    font-weight: bold;
     font-size: 1.2em;
     color: #333;
     text-align: center;
@@ -47,6 +49,8 @@
 
 /* Стиль для кнопок */
 button {
+    font-family: 'Lucida Console', Courier, monospace;
+    font-weight: bold;
     background-color: #4CAF50; /* Зелёный цвет */
     color: white;
     border: none;
