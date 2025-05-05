@@ -320,6 +320,7 @@ document.addEventListener("keydown", (e) => {
         let box = row.children[nextLetter];
         box.classList.add('letter-ß');
         insertLetter(pressedKey)
+    }
         else {
             insertLetter(pressedKey)
         }
