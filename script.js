@@ -308,15 +308,22 @@ document.addEventListener("keydown", (e) => {
     }
 
     // проверяем, есть ли введённый символ в английском алфавите
-    let found = pressedKey.match(/[a-zäöüß]/gi);
-
+    let found = pressedKey.match(/[a-zäöü]/gi);
+    
     // если нет
     if (!found || found.length > 1) {
         // то выходим из обработчика
         return
     // иначе добавляем введённую букву в новую клетку
-    } else {
+    } else if(found === "ß") {       
+        let row = document.getElementsByClassName("letter-row")[6 - guessesRemaining];
+        let box = row.children[nextLetter];
+        box.classList.add('letter-ß');
         insertLetter(pressedKey)
+        else {
+            insertLetter(pressedKey)
+        }
+        
     }
 })
 
