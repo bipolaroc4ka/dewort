@@ -31,13 +31,6 @@
     order: 0;              /* Сначала */
     
 }
-#reveal-word-btn::before {
-    content: '🏳️ ';
-}
-
-#reveal-word-btn:hover {
-    background-color: #c0392b; /* Более темный зеленый при наведении */
-}
 
 .backspace-key {
   background-color: #d3d6da;
