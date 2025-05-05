@@ -57,11 +57,6 @@ button {
     background-color: #f44336; /* Красный цвет */
 }
 
-/* При наведении на кнопку */
-button:hover {
-    background-color: #45a049;
-}
-
 /* При наведении на кнопку "Нет" */
 #confirmNo:hover {
     background-color: #e53935;
