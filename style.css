@@ -40,8 +40,8 @@
     background-color: #c0392b; /* Более темный зеленый при наведении */
 }
 .enter-key {
-  background-color: #d3d6da;
-  color: #000000;
+  background-color: #006400;
+  color: #FFFFFF;
   font-weight: bold;
   order: 1;              /* После «Сдаться» */
 }
