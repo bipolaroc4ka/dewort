@@ -367,6 +367,7 @@ function handleVirtualKey(key) {
         const modal = document.getElementById("confirmationModal");
 
     // Показываем модальное окно
+        modal.classList.add('show'); // Когда окно появляется
         modal.style.display = "flex";
 
     // Получаем кнопки
@@ -377,6 +378,7 @@ function handleVirtualKey(key) {
         function onYesClick() {
             toastr.info(`Das gesuchte Wort: ${rightGuessString}`);
             reloadPageAfterDelay();
+            modal.classList.remove('show');
             modal.style.display = "none"; // Закрываем модальное окно
         // Убираем обработчики после выполнения
             confirmYesButton.removeEventListener("click", onYesClick);
@@ -385,6 +387,7 @@ function handleVirtualKey(key) {
 
     // Функция для обработки кнопки "Нет"
         function onNoClick() {
+            modal.classList.remove('show');
             modal.style.display = "none"; // Закрываем модальное окно
         // Убираем обработчики после выполнения
             confirmYesButton.removeEventListener("click", onYesClick);
