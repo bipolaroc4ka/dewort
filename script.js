@@ -79,10 +79,7 @@ function updateGuessedCountDisplay(count) {
 const word = rightGuessString; // Загаданное слово
 document.getElementById('word').textContent = word; // Отображаем слово в span
 
-document.getElementById('reveal-word-btn').addEventListener('click', function() {
-    document.getElementById('word-display').style.display = 'block'; 
-    reloadPageAfterDelay();// Показываем слово
-});
+
 
 // Функция запуска стильного отсчёта и перезагрузки
 function reloadPageAfterDelay(seconds = 7) {
@@ -358,12 +355,17 @@ function handleVirtualKey(key) {
         if (nextLetter !== 0) deleteLetter();
         return;
     }
-
+    
     if (key === 'Enter') {
         checkGuess();
         return;
     }
-    
+    if (key === 'Aufgeben') {
+        // Показать слово и запустить отсчёт
+        toastr.info(`Das gesuchte Wort: ${rightGuessString}`);
+        reloadPageAfterDelay();
+        return;
+      }
     if (key === 'ß') {
         
         // Находим элемент, к которому нужно применить класс
