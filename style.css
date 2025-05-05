@@ -40,14 +40,14 @@
     background-color: #c0392b; /* Более темный зеленый при наведении */
 }
 .enter-key {
-  background-color: #6aaa64;
-  color: white;
+  background-color: #d3d6da;
+  color: #000000;
   font-weight: bold;
   order: 1;              /* После «Сдаться» */
 }
 .backspace-key {
-  background-color: #787c7e;
-  color: white;
+  background-color: #d3d6da;
+  color: #000000;
   font-weight: bold;
   order: 2;              /* Последней */
 }
