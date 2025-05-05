@@ -25,7 +25,7 @@
 }
 
 #reveal-word-btn {
-    background-color: #e74c3c; /* Зеленый цвет */
+    background-color: #e74c3c; /* красный */
     display: flex;
     justify-content: center;
     color: white;
@@ -37,7 +37,8 @@
     transition: background-color 0.3s ease;
     width: 100%; /* Адаптивность на мобильных устройствах */
     max-width: 250px; /* Максимальная ширина для десктопов */
-    margin: 10px auto;
+    margin: 10px 0;
+    content: ' 🏳️';
 }
 
 #reveal-word-btn:hover {
