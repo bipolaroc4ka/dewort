@@ -323,10 +323,10 @@ document.addEventListener("keydown", (e) => {
 
 function initKeyboard() {
     const keys = [
-        ['Q','W','E','R','T','Z','U','I','O','P','Ü'],
+        ['Q','W','E','R','T','Z','U','I','O','P','Ü','Backspace'],
         ['A','S','D','F','G','H','J','K','L','Ö','Ä','ß'],
-        ['Aufgeben','Y','X','C','V','B','N','M','Backspace'],
-        ['Enter']
+        ['Aufgeben','Y','X','C','V','B','N','M','Enter']
+        
     ];
 
     const keyboard = document.getElementById("keyboard");
