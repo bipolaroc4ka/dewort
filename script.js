@@ -325,7 +325,7 @@ function initKeyboard() {
     const keys = [
         ['Q','W','E','R','T','Z','U','I','O','P','Ü','⌫'],
         ['A','S','D','F','G','H','J','K','L','Ö','Ä','ß'],
-        ['Aufgeben','Y','X','C','V','B','N','M','Enter']
+        ['🏳️','Y','X','C','V','B','N','M','Enter']
         
     ];
 
@@ -340,7 +340,7 @@ function initKeyboard() {
             button.setAttribute('data-key', key);
             if (key === 'Enter')      button.classList.add('enter-key');
             if (key === '⌫')         button.classList.add('backspace-key');
-            if (key === 'Aufgeben')   button.id = 'reveal-word-btn';
+            if (key === '🏳️')         button.id = 'reveal-word-btn';
             button.addEventListener('click', () => handleVirtualKey(key));
             rowDiv.appendChild(button);
         });
@@ -360,7 +360,7 @@ function handleVirtualKey(key) {
         checkGuess();
         return;
     }
-    if (key === 'Aufgeben') {
+    if (key === '🏳️') {
         // Показать слово и запустить отсчёт
         toastr.info(`Das gesuchte Wort: ${rightGuessString}`);
         reloadPageAfterDelay();
