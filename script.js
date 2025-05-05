@@ -328,7 +328,8 @@ function initKeyboard() {
     const keys = [
         ['Q','W','E','R','T','Z','U','I','O','P','Ü'],
         ['A','S','D','F','G','H','J','K','L','Ö','Ä','ß'],
-        ['Enter','Y','X','C','V','B','N','M','Backspace']
+        ['Y','X','C','V','B','N','M'],
+        ['Aufgeben','Enter','Backspace']
     ];
 
     const keyboard = document.getElementById("keyboard");
@@ -338,8 +339,11 @@ function initKeyboard() {
         row.forEach(key => {
             const button = document.createElement('button');
             button.textContent = key;
-            button.classList.add('keyboard-key');
+            button.classList.add('keyboard-key');            
             button.setAttribute('data-key', key);
+            if (key === 'Enter')      button.classList.add('enter-key');
+            if (key === 'Backspace')  button.classList.add('backspace-key');
+            if (key === 'Aufgeben')   button.id = 'reveal-word-btn';
             button.addEventListener('click', () => handleVirtualKey(key));
             rowDiv.appendChild(button);
         });
@@ -359,7 +363,7 @@ function handleVirtualKey(key) {
         checkGuess();
         return;
     }
-
+    
     if (key === 'ß') {
         
         // Находим элемент, к которому нужно применить класс
