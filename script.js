@@ -50,6 +50,32 @@ function generateUniqueID() {
 const userID = generateUniqueID();
 console.log('User ID:', userID);
 
+// Установить cookie со счётчиком отгаданных слов
+function setGuessedCount(count) {
+    setCookie('guessedWordsCount', count, 365);
+}
+
+// Получить текущий счётчик отгаданных слов
+function getGuessedCount() {
+    const count = getCookie('guessedWordsCount');
+    return count ? parseInt(count, 10) : 0;
+}
+
+// Увеличить счётчик на 1
+function incrementGuessedCount() {
+    const currentCount = getGuessedCount();
+    const newCount = currentCount + 1;
+    setGuessedCount(newCount);
+    updateGuessedCountDisplay(newCount);
+}
+
+function updateGuessedCountDisplay(count) {
+    const counterDiv = document.getElementById('guessed-count');
+    if (counterDiv) {
+        counterDiv.innerText = `Gefundene Wörter: ${count}`;
+    }
+}
+
 const word = rightGuessString; // Загаданное слово
 document.getElementById('word').textContent = word; // Отображаем слово в span
 
@@ -207,7 +233,8 @@ function checkGuess () {
     if (guessString === rightGuessString) {
         // выводим сообщение об успехе
         toastr.success("Sie haben gewonnen!")
-        reloadPageAfterDelay();
+        incrementGuessedCount();
+        reloadPageAfterDelay();        
         // обнуляем количество попыток
         guessesRemaining = 0;
         // выходим из проверки
@@ -348,5 +375,8 @@ function handleVirtualKey(key) {
 document.addEventListener("DOMContentLoaded", function() {
     initBoard();
     initKeyboard();
+    // При загрузке страницы показать текущий счётчик
+    updateGuessedCountDisplay(getGuessedCount());
+
 });
 
