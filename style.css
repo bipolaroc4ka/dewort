@@ -25,20 +25,10 @@
 }
 
 #reveal-word-btn {
-    background-color: #e74c3c; /* красный */
-    display: flex;
-    justify-content: center;
+    background-color: #e74c3c;
     color: white;
-    font-size: 8px;
-    padding: 8px 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    width: 100%; /* Адаптивность на мобильных устройствах */
-    max-width: 250px; /* Максимальная ширина для десктопов */
-    margin: 10px auto; /* сверху 10px, справа 0, снизу 10px, слева 10px */
-    order: 0;      
+    ont-weight: bold;
+    order: 0;              /* Сначала */
     
 }
 #reveal-word-btn::after {
