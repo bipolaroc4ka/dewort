@@ -361,7 +361,9 @@ function handleVirtualKey(key) {
         checkGuess();
         return;
     }
-    if (key === '🏳️') {
+    let handlersAdded = false;  // Флаг для отслеживания добавления обработчиков
+
+if (key === '🏳️') {
     // Показываем модальное окно
     const modal = document.getElementById("confirmationModal");
     modal.style.display = "flex";
@@ -370,26 +372,29 @@ function handleVirtualKey(key) {
     const confirmYesButton = document.getElementById("confirmYes");
     const confirmNoButton = document.getElementById("confirmNo");
 
-    // Убираем все существующие обработчики событий (предотвращаем добавление несколько раз)
-    confirmYesButton.removeEventListener("click", onYesClick);
-    confirmNoButton.removeEventListener("click", onNoClick);
+    // Если обработчики ещё не добавлены
+    if (!handlersAdded) {
+        // Функция для обработки кнопки "Да"
+        function onYesClick() {
+            toastr.info(`Das gesuchte Wort: ${rightGuessString}`);
+            reloadPageAfterDelay();
+            modal.style.display = "none"; // Закрываем модальное окно
+        }
 
-    // Обработчик кнопки "Да"
-    function onYesClick() {
-        toastr.info(`Das gesuchte Wort: ${rightGuessString}`);
-        reloadPageAfterDelay();
-        modal.style.display = "none";
+        // Функция для обработки кнопки "Нет"
+        function onNoClick() {
+            modal.style.display = "none"; // Закрываем модальное окно
+        }
+
+        // Добавляем обработчики событий
+        confirmYesButton.addEventListener("click", onYesClick);
+        confirmNoButton.addEventListener("click", onNoClick);
+
+        // Устанавливаем флаг, чтобы обработчики не добавлялись повторно
+        handlersAdded = true;
     }
-
-    // Обработчик кнопки "Нет"
-    function onNoClick() {
-        modal.style.display = "none";
-    }
-
-    // Добавляем обработчики событий
-    confirmYesButton.addEventListener("click", onYesClick);
-    confirmNoButton.addEventListener("click", onNoClick);
 }
+
 
     if (key === 'ß') {
         
