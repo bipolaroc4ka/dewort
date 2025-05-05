@@ -308,7 +308,8 @@ document.addEventListener("keydown", (e) => {
     }
 
     // проверяем, есть ли введённый символ в английском алфавите
-    let found = pressedKey.match(/[a-z]/gi)
+    let found = pressedKey.match(/[a-zäöüß]/gi);
+
     // если нет
     if (!found || found.length > 1) {
         // то выходим из обработчика
