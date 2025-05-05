@@ -1,12 +1,16 @@
 /* заголовок страницы */
 #guessed-count {
-    background: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
     color: white;
-    padding: 5px 10px;
-    border-radius: 8px;
+    padding: 8px 16px;
+    border-radius: 12px;
     font-size: 1rem;
-    margin-top: 10px; /* Отступ от заголовка */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
     display: inline-block;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
 }
 @media (max-width: 768px) {
     #guessed-count {
