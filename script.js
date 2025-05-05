@@ -361,39 +361,39 @@ function handleVirtualKey(key) {
         checkGuess();
         return;
     }
-    let handlersAdded = false;  // Флаг для отслеживания добавления обработчиков
-
-if (key === '🏳️') {
+let handlersAdded = false;  // Флаг для отслеживания добавления обработчиков
+    
+    if (key === '🏳️') {
     // Показываем модальное окно
-    const modal = document.getElementById("confirmationModal");
-    modal.style.display = "flex";
+        const modal = document.getElementById("confirmationModal");
+        modal.style.display = "flex";
 
     // Убираем старые обработчики, если они есть
-    const confirmYesButton = document.getElementById("confirmYes");
-    const confirmNoButton = document.getElementById("confirmNo");
+        const confirmYesButton = document.getElementById("confirmYes");
+        const confirmNoButton = document.getElementById("confirmNo");
 
     // Если обработчики ещё не добавлены
-    if (!handlersAdded) {
+        if (!handlersAdded) {
         // Функция для обработки кнопки "Да"
-        function onYesClick() {
-            toastr.info(`Das gesuchte Wort: ${rightGuessString}`);
-            reloadPageAfterDelay();
-            modal.style.display = "none"; // Закрываем модальное окно
-        }
+            function onYesClick() {
+                toastr.info(`Das gesuchte Wort: ${rightGuessString}`);
+                reloadPageAfterDelay();
+                modal.style.display = "none"; // Закрываем модальное окно
+            }
 
         // Функция для обработки кнопки "Нет"
-        function onNoClick() {
-            modal.style.display = "none"; // Закрываем модальное окно
-        }
+            function onNoClick() {
+                modal.style.display = "none"; // Закрываем модальное окно
+            }
 
         // Добавляем обработчики событий
-        confirmYesButton.addEventListener("click", onYesClick);
-        confirmNoButton.addEventListener("click", onNoClick);
+            confirmYesButton.addEventListener("click", onYesClick);
+            confirmNoButton.addEventListener("click", onNoClick);
 
         // Устанавливаем флаг, чтобы обработчики не добавлялись повторно
-        handlersAdded = true;
+            handlersAdded = true;
+        }
     }
-}
 
 
     if (key === 'ß') {
