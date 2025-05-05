@@ -1,28 +1,106 @@
-/* Стиль для модального окна */
-.modal {
-    display: none; /* Изначально скрыто */
+/* Стиль для фона модального окна (для затемнения фона) */
+#confirmationModal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Скрыть по умолчанию */
     justify-content: center;
     align-items: center;
+    z-index: 1000;
+    transition: opacity 0.3s ease-in-out;
 }
 
-.modal-content {
-    background-color: white;
+/* Стиль для самого модального окна */
+#confirmationModalContent {
+    background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     text-align: center;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
 }
 
+/* Заголовок модального окна */
+#confirmationModalContent h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Текст в модальном окне */
+#confirmationModalContent p {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Стиль для кнопок */
 button {
-    margin: 10px;
+    background-color: #4CAF50; /* Зелёный цвет */
+    color: white;
+    border: none;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 1.2em;
+    margin: 10px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Стиль для кнопки "Нет" */
+#confirmNo {
+    background-color: #f44336; /* Красный цвет */
+}
+
+/* При наведении на кнопку */
+button:hover {
+    background-color: #45a049;
+}
+
+/* При наведении на кнопку "Нет" */
+#confirmNo:hover {
+    background-color: #e53935;
+}
+
+/* Анимация появления */
+#confirmationModal.show {
+    display: flex;
+    opacity: 1;
+}
+
+#confirmationModalContent {
+    transform: scale(1.1);
+}
+
+#confirmationModal.show #confirmationModalContent {
+    transform: scale(1);
+}
+
+@media (max-width: 480px) {
+    #confirmationModalContent {
+        width: 90%;
+        padding: 15px;
+    }
+
+    #confirmationModalContent h2 {
+        font-size: 1.2em;
+    }
+
+    #confirmationModalContent p {
+        font-size: 1em;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+        padding: 12px;
+        font-size: 1em;
+    }
 }
 
 #guessed-count {
