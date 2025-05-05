@@ -37,7 +37,7 @@
     transition: background-color 0.3s ease;
     width: 100%; /* Адаптивность на мобильных устройствах */
     max-width: 250px; /* Максимальная ширина для десктопов */
-    margin: 10px 0 10px 10px; /* сверху 10px, справа 0, снизу 10px, слева 10px */
+    margin: 10px auto; /* сверху 10px, справа 0, снизу 10px, слева 10px */
     
 }
 #reveal-word-btn::after {
