@@ -323,7 +323,7 @@ document.addEventListener("keydown", (e) => {
 
 function initKeyboard() {
     const keys = [
-        ['Q','W','E','R','T','Z','U','I','O','P','Ü','Backspace'],
+        ['Q','W','E','R','T','Z','U','I','O','P','Ü','⌫'],
         ['A','S','D','F','G','H','J','K','L','Ö','Ä','ß'],
         ['Aufgeben','Y','X','C','V','B','N','M','Enter']
         
@@ -339,7 +339,7 @@ function initKeyboard() {
             button.classList.add('keyboard-key');            
             button.setAttribute('data-key', key);
             if (key === 'Enter')      button.classList.add('enter-key');
-            if (key === 'Backspace')  button.classList.add('backspace-key');
+            if (key === '⌫')         button.classList.add('backspace-key');
             if (key === 'Aufgeben')   button.id = 'reveal-word-btn';
             button.addEventListener('click', () => handleVirtualKey(key));
             rowDiv.appendChild(button);
@@ -351,7 +351,7 @@ function initKeyboard() {
 function handleVirtualKey(key) {
     if (guessesRemaining === 0) return;
 
-    if (key === 'Backspace') {
+    if (key === '⌫') {
         if (nextLetter !== 0) deleteLetter();
         return;
     }
