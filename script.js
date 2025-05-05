@@ -362,10 +362,26 @@ function handleVirtualKey(key) {
         return;
     }
     if (key === '🏳️') {
-        // Показать слово и запустить отсчёт
+
+
+        // Показываем модальное окно
+        document.getElementById("confirmationModal").style.display = "flex";
+    
+        // Обработчик кнопки "Да"
+        document.getElementById("confirmYes").addEventListener("click", function() {
         toastr.info(`Das gesuchte Wort: ${rightGuessString}`);
         reloadPageAfterDelay();
-        return;
+        // Закрыть модальное окно
+        document.getElementById("confirmationModal").style.display = "none";
+    });
+    
+        // Обработчик кнопки "Нет"
+        document.getElementById("confirmNo").addEventListener("click", function() {
+        // Просто закрыть модальное окно
+        document.getElementById("confirmationModal").style.display = "none";
+    });
+        
+    
       }
     if (key === 'ß') {
         
