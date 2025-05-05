@@ -374,7 +374,7 @@ function handleVirtualKey(key) {
         box.classList.add('letter-ß');
         insertLetter('ß');
     } else if (key.length === 1 && key.match(/[a-zA-ZÄÖÜäöü]/)) {
-        insertLetter(key.toUpperCase());
+        insertLetter(key.toLowerCase());
     }
 }
 
