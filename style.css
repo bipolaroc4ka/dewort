@@ -6,7 +6,8 @@
     border-radius: 12px;
     font-size: 1rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 15px;
+    margin-top: 10px;
+    margin-bot: 10px;
     display: inline-block;
     font-weight: bold;
     letter-spacing: 0.5px;
