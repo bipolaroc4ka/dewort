@@ -38,6 +38,7 @@
     width: 100%; /* Адаптивность на мобильных устройствах */
     max-width: 250px; /* Максимальная ширина для десктопов */
     margin: 10px auto; /* сверху 10px, справа 0, снизу 10px, слева 10px */
+    order: 0;      
     
 }
 #reveal-word-btn::after {
@@ -48,7 +49,18 @@
 #reveal-word-btn:hover {
     background-color: #c0392b; /* Более темный зеленый при наведении */
 }
-
+.enter-key {
+  background-color: #6aaa64;
+  color: white;
+  font-weight: bold;
+  order: 1;              /* После «Сдаться» */
+}
+.backspace-key {
+  background-color: #787c7e;
+  color: white;
+  font-weight: bold;
+  order: 2;              /* Последней */
+}
 #word-display {
     font-size: 18px;
     margin-top: 10px;
@@ -136,6 +148,14 @@ h1 {
 }
 
 @media (max-width: 768px) {
+    .keyboard-key {
+    font-size: 12px;
+    padding: 5px 7px;
+  }
+    .keyboard-row {
+    justify-content: center;
+  }
+
   .keyboard-key {
     font-size: 12px;
     padding: 5px 7px;
