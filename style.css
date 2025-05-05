@@ -1,4 +1,4 @@
-/* заголовок страницы */
+ore/* заголовок страницы */
 #guessed-count {
     display: inline-block;
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
@@ -31,7 +31,7 @@
     order: 0;              /* Сначала */
     
 }
-#reveal-word-btn::after {
+#reveal-word-btn::before {
     content: ' 🏳️';
     margin-left: 3px; /* немного отступа между текстом кнопки и флагом */
 }
@@ -165,5 +165,7 @@ h1 {
   font-weight: bold;
   order: 1;              /* После «Сдаться» */
 }
-
+.enter-key::after{
+ content: '>';
+}
 
