@@ -136,6 +136,7 @@ h1 {
   color: #000000;
   border: none;
   cursor: pointer;
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
