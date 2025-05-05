@@ -373,6 +373,7 @@ function handleVirtualKey(key) {
         let box = row.children[nextLetter];
         box.classList.add('letter-ß');
         insertLetter('ß');
+        box.classList.remove('letter-ß');
     } else if (key.length === 1 && key.match(/[a-zA-ZÄÖÜäöü]/)) {
         insertLetter(key.toLowerCase());
     }
