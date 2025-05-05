@@ -325,7 +325,7 @@ document.addEventListener("keydown", (e) => {
             insertLetter(pressedKey)
         }
         
-    }
+    
 })
 
 
