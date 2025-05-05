@@ -58,12 +58,42 @@ document.getElementById('reveal-word-btn').addEventListener('click', function() 
     reloadPageAfterDelay();// Показываем слово
 });
 
-
+// Функция запуска стильного отсчёта и перезагрузки
 function reloadPageAfterDelay(seconds = 7) {
+    const countdownDiv = document.createElement('div');
+    countdownDiv.id = 'countdown';
+    countdownDiv.style.position = 'fixed';
+    countdownDiv.style.bottom = '20%';
+    countdownDiv.style.left = '50%';
+    countdownDiv.style.transform = 'translateX(-50%)';
+    countdownDiv.style.background = 'rgba(220, 53, 69, 0.9)'; // Красно-розовый фон
+    countdownDiv.style.color = 'white';
+    countdownDiv.style.padding = '15px 30px';
+    countdownDiv.style.borderRadius = '12px';
+    countdownDiv.style.fontSize = 'clamp(1.2rem, 5vw, 2rem)'; // Адаптивный шрифт
+    countdownDiv.style.zIndex = '1000';
+    countdownDiv.style.boxShadow = '0 4px 10px rgba(0,0,0,0.3)';
+    countdownDiv.style.opacity = '0';
+    countdownDiv.style.transition = 'opacity 0.5s ease';
+
+    countdownDiv.innerText = `Neue Runde in ${seconds} Sekunden...`;
+    document.body.appendChild(countdownDiv);
+
+    // Плавное появление
     setTimeout(() => {
-        location.reload();
-    }, seconds * 1000);
+        countdownDiv.style.opacity = '1';
+    }, 100);
+
+    const countdownInterval = setInterval(() => {
+        seconds--;
+        countdownDiv.innerText = `Neue Runde in ${seconds} Sekunden...`;
+        if (seconds <= 0) {
+            clearInterval(countdownInterval);
+            location.reload();
+        }
+    }, 1000);
 }
+
 
 // создаём игровое поле
 function initBoard() {
