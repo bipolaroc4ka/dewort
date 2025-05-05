@@ -325,8 +325,8 @@ function initKeyboard() {
     const keys = [
         ['Q','W','E','R','T','Z','U','I','O','P','Ü'],
         ['A','S','D','F','G','H','J','K','L','Ö','Ä','ß'],
-        ['Aufgeben','Y','X','C','V','B','N','M','Backspace'],
-        ['Enter']
+        ['Y','X','C','V','B','N','M'],
+        ['Aufgeben','Enter','Backspace']
     ];
 
     const keyboard = document.getElementById("keyboard");
