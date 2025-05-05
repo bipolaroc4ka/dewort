@@ -1,4 +1,19 @@
 /* заголовок страницы */
+#guessed-count {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 10px; /* Отступ от заголовка */
+    display: inline-block;
+}
+@media (max-width: 768px) {
+    #guessed-count {
+        font-size: 0.9rem;
+        padding: 4px 8px;
+    }
+}
 
 #reveal-word-btn {
     background-color: #e74c3c; /* Зеленый цвет */
