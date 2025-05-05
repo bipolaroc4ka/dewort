@@ -362,36 +362,35 @@ function handleVirtualKey(key) {
         return;
     }
     if (key === '🏳️') {
+    // Показываем модальное окно
+    const modal = document.getElementById("confirmationModal");
+    modal.style.display = "flex";
 
+    // Убираем старые обработчики, если они есть
+    const confirmYesButton = document.getElementById("confirmYes");
+    const confirmNoButton = document.getElementById("confirmNo");
 
-        // Показываем модальное окно
-        document.getElementById("confirmationModal").style.display = "flex";
-         // Убираем старые обработчики, если они есть
-        const confirmYesButton = document.getElementById("confirmYes");
-        const confirmNoButton = document.getElementById("confirmNo");
-        // Убираем все существующие обработчики событий (предотвращаем добавление несколько раз)
-        confirmYesButton.removeEventListener("click", onYesClick);
-        confirmNoButton.removeEventListener("click", onNoClick);
+    // Убираем все существующие обработчики событий (предотвращаем добавление несколько раз)
+    confirmYesButton.removeEventListener("click", onYesClick);
+    confirmNoButton.removeEventListener("click", onNoClick);
 
-        function onYesClick() {
-            toastr.info(`Das gesuchte Wort: ${rightGuessString}`);
-            reloadPageAfterDelay();
-            modal.style.display = "none";
-        }
-        
-        // Обработчик кнопки "Нет"
-        function onNoClick() {
-            modal.style.display = "none";
-        }
+    // Обработчик кнопки "Да"
+    function onYesClick() {
+        toastr.info(`Das gesuchte Wort: ${rightGuessString}`);
+        reloadPageAfterDelay();
+        modal.style.display = "none";
+    }
 
-    
-        // Добавляем обработчики событий
-        confirmYesButton.addEventListener("click", onYesClick);
-        confirmNoButton.addEventListener("click", onNoClick);
-    });
-        
-    
-      }
+    // Обработчик кнопки "Нет"
+    function onNoClick() {
+        modal.style.display = "none";
+    }
+
+    // Добавляем обработчики событий
+    confirmYesButton.addEventListener("click", onYesClick);
+    confirmNoButton.addEventListener("click", onNoClick);
+}
+
     if (key === 'ß') {
         
         // Находим элемент, к которому нужно применить класс
