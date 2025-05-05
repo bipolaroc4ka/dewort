@@ -33,7 +33,6 @@
 }
 #reveal-word-btn::before {
     content: '🏳️ ';
-    margin-left: 3px; /* немного отступа между текстом кнопки и флагом */
 }
 
 #reveal-word-btn:hover {
