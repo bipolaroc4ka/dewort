@@ -48,7 +48,7 @@ function generateUniqueID() {
 
 // Используем уникальный ID для статистики
 const userID = generateUniqueID();
-console.log('User ID:', userID);
+
 
 // Установить cookie со счётчиком отгаданных слов
 function setGuessedCount(count) {
