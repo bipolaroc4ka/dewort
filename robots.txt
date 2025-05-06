@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /  # Запрещает индексацию всего сайта
+Allow: /dewort/  # Разрешает индексацию только каталога /dewort/
+Sitemap: https://bipolaroc4ka.github.io/dewort/sitemap.xml  # Укажите путь к вашему sitemap
