@@ -3,13 +3,13 @@
   "short_name": "deWort",
   "icons": [
     {
-      "src": "https://bipolaroc4ka.github.io/dewort/web-app-manifest-192x192.png",
+      "src": "https://bipolaroc4ka.github.io/dewort/img/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "https://bipolaroc4ka.github.io/dewort/web-app-manifest-512x512.png",
+      "src": "https://bipolaroc4ka.github.io/dewort/img/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
