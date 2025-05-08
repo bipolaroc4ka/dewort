@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /dewort/  # Разрешает индексацию каталога /dewort/
-Sitemap: https://bipolaroc4ka.github.io/dewort/sitemap.xml  # Путь к sitemap
